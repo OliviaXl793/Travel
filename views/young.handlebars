@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <header><h1>Show the people who is the youngest</h1></header>
+
+<body>
+<article>
+
+	<h2 class="name">{{this.name}}</h2> <i>{{homecountry}}{{age}}{{gender}}</i>
+	<hr>
+	<div class="content">
+	    {{this.countries}}...
+	</div>
+
+</article>
+
+<script>
+ 
+function myFunction() {
+  var result={};
+var age = 200;
+  _.each(_DATA,function(data){ 
+    if(data.age<age)
+    result=data;
+  })
+  res.json(result);
+}
+</script>
+</body>
+</html>
+
+<table>
+    <thead>
+        <tr>
+            <td>Name</td><td>City</td><td>Age Requirement</td><td>Max Group</td>
+        </tr>
+    </thead>
+    {{#each activ}}
+        <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.city}}</td>
+                <td>{{this.ageRequirement}}</td>
+                <td>{{this.maxGroupCount}}</td>
+            </tr>
+    {{/each}}
+</table>
